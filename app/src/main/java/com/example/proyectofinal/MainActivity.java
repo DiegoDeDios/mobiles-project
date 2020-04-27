@@ -1,86 +1,42 @@
 package com.example.proyectofinal;
 
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Intent;
+import androidx.appcompat.widget.Toolbar;
+import androidx.drawerlayout.widget.DrawerLayout;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.Toast;
+import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText etEmailLogin,
-            etPassLogin;
+    DrawerLayout drawerLayout;
+    ActionBarDrawerToggle actionBarDrawerToggle;
 
-    TextView tvRegister;
-
-    Button btnLogin;
-
-    DBHelper dbHelper;
-
-    public static final String USERNAME = "com.example.proyectofinal.example.USERNAME";
+    Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        dbHelper = new DBHelper(this);
+        toolbar = findViewById(R.id.navAction);
+        setSupportActionBar(toolbar);
 
-        etEmailLogin = findViewById(R.id.etEmailLogin);
-        etPassLogin = findViewById(R.id.etPassLogin);
+        drawerLayout = findViewById(R.id.drawerLayout);
+        actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.open, R.string.close);
 
-        tvRegister = findViewById(R.id.tvRegister);
-        tvRegister.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                startRegisterActivity();
-            }
-        });
+        drawerLayout.addDrawerListener(actionBarDrawerToggle);
+        actionBarDrawerToggle.syncState();
 
-        btnLogin = findViewById(R.id.btnLogin);
-        btnLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String name = etEmailLogin.getText().toString();
-                String pass = etPassLogin.getText().toString();
-
-                if(name.equals("") && pass.equals("")){
-                    Toast.makeText(MainActivity.this, "Mail and Password required!", Toast.LENGTH_SHORT).show();
-                }else if(name.equals("")){
-                    Toast.makeText(MainActivity.this, "Mail is required!", Toast.LENGTH_SHORT).show();
-                }else if(pass.equals("")){
-                    Toast.makeText(MainActivity.this, "Password is required!", Toast.LENGTH_SHORT).show();
-                }else{
-                    //Auth
-                    //DBHelper GET Email and pass
-                    String userCredential = dbHelper.getUserName(name, pass);
-                    if (userCredential.equals("")) {
-                        Toast.makeText(MainActivity.this, "Error, the user or password is wrong", Toast.LENGTH_SHORT).show();
-                    }else{
-                        Toast.makeText(MainActivity.this, "Entras a la app como: " + userCredential, Toast.LENGTH_SHORT).show();
-                        //StartActiviy App
-                        //startAppActivity(userCredential);
-                    }
-                }
-            }
-        });
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
-    public void startRegisterActivity(){
-        Intent intent = new Intent(this, RegisterActivity.class);
-        startActivity(intent);
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        if(actionBarDrawerToggle.onOptionsItemSelected(item)){
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
-
-    /*
-    public void startAppActivity(){
-        Intent intent = new Intent(this, app.class);
-        intent.putExtra(USERNAME,userCredential);
-        startActivity(intent);
-    }*/
-
-
 }

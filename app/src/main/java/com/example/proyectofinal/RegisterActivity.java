@@ -2,6 +2,8 @@ package com.example.proyectofinal;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -10,6 +12,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class RegisterActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
@@ -100,19 +103,25 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
 
                     Users u = new Users(name, father, mother, email, school, Integer.parseInt(age), phone ,password);
                     System.out.println(u);
-                    RegisterActivity.dbHelper.insertUser(u);
-                    RegisterActivity.dbHelper.insertUserCredential(RegisterActivity.password);
-                    //StartActivityApp
+                    //RegisterActivity.dbHelper.insertUser(u);
+                    //RegisterActivity.dbHelper.insertUserCredential(RegisterActivity.password);
+                    startMainActivity();
                 }
             }
         });
 
     }
 
+    public void startMainActivity(){
+        Intent intent = new Intent(this, MainActivity.class);
+        //intent.putExtra(USERNAME,userCredential);
+        startActivity(intent);
+    }
+
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        ((TextView)spinner.getChildAt(0)).setTextColor(Color.WHITE);
         school = parent.getItemAtPosition(position).toString();
-        Toast.makeText(this, school, Toast.LENGTH_SHORT).show();
     }
 
     @Override

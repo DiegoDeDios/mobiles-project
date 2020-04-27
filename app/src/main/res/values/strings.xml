@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">ProyectoFinal</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
     <string-array name="grades">
         <item>Opciones</item>
         <item>Primaria</item>
