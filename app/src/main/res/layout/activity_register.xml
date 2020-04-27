@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/purple"
+    android:gravity="center"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!--Title-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Register"
+            android:textSize="40dp"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:layout_marginBottom="15dp"
+            android:textStyle="bold"/>
+        <!--Name-->
+        <EditText
+            android:id="@+id/etNameRegister"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14dp"
+            android:hint="Name * "
+            android:layout_marginTop="10dp"
+            android:textColorHint="@color/white"
+            android:background="@drawable/edittextbackground"
+            android:inputType="text"
+            android:textColor="@color/white"/>
+        <!--LastName-->
+        <EditText
+            android:id="@+id/etLastnameFather"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14dp"
+            android:layout_marginTop="10dp"
+            android:inputType="text"
+            android:hint="First Lastname *"
+            android:background="@drawable/edittextbackground"
+            android:textColorHint="@color/white"
+            android:textColor="@color/white"/>
+        <!--LastName-->
+        <EditText
+            android:id="@+id/etLastnameMother"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14dp"
+            android:hint="Second Lastname"
+            android:layout_marginTop="10dp"
+            android:textColorHint="@color/white"
+            android:background="@drawable/edittextbackground"
+            android:inputType="text"
+            android:textColor="@color/white"/>
+        <!--Age-->
+        <EditText
+            android:id="@+id/etAgeRegister"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14dp"
+            android:layout_marginTop="10dp"
+            android:inputType="number"
+            android:hint="Age *"
+            android:background="@drawable/edittextbackground"
+            android:textColorHint="@color/white"
+            android:textColor="@color/white"/>
+        <!--Email-->
+        <EditText
+            android:id="@+id/etEmailRegister"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14dp"
+            android:hint="Email *"
+            android:layout_marginTop="10dp"
+            android:textColorHint="@color/white"
+            android:background="@drawable/edittextbackground"
+            android:inputType="textEmailAddress"
+            android:textColor="@color/white"/>
+        <!--LastName-->
+        <EditText
+            android:id="@+id/etPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14dp"
+            android:layout_marginTop="10dp"
+            android:inputType="number"
+            android:hint="Phone *"
+            android:background="@drawable/edittextbackground"
+            android:textColorHint="@color/white"
+            android:textColor="@color/white"/>
+        <!--School-->
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14dp"
+            android:hint="School Grade"
+            android:layout_marginTop="10dp"
+            android:textColorHint="@color/white"
+            android:background="@drawable/edittextbackground"
+            android:inputType="textEmailAddress"
+            android:textColor="@color/white"/>
+        <!--Password-->
+        <EditText
+            android:id="@+id/etPassRegister"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14dp"
+            android:layout_marginTop="10dp"
+            android:inputType="textPassword"
+            android:hint="Password *"
+            android:background="@drawable/edittextbackground"
+            android:textColorHint="@color/white"
+            android:textColor="@color/white"/>
+
+        <Button
+            android:id="@+id/btnRegister"
+            android:layout_width="181dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_login"
+            android:textColor="@color/white"
+            android:textSize="14dp"
+            android:text="Register"
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"
+            android:textAllCaps="false"
+            android:layout_gravity="center"
+            android:stateListAnimator="@null"/>
+
+    </LinearLayout>
+
+</RelativeLayout>
