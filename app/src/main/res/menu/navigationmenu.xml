@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
+        android:id="@+id/navHome"
+        android:icon="@drawable/ic_home"
+        android:title="Home"/>
+    <item
         android:id="@+id/navAccount"
-        android:icon="@mipmap/baseline_account_box_white_18dp"
+        android:icon="@drawable/ic_profile"
         android:title="My Account"/>
     <item
         android:id="@+id/navSettings"
-        android:icon="@mipmap/baseline_settings_applications_white_18dp"
+        android:icon="@drawable/ic_settings"
         android:title="Settings"/>
     <item
         android:id="@+id/navLogOut"
-        android:icon="@mipmap/baseline_account_box_white_18dp"
+        android:icon="@drawable/ic_logout"
         android:title="Logout"/>
-
-
 </menu>

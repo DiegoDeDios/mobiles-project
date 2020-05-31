@@ -47,6 +47,7 @@ public class LoginActivity extends AppCompatActivity {
                 String name = etEmailLogin.getText().toString();
                 String pass = etPassLogin.getText().toString();
 
+                startMainActivity();
                 if(name.equals("") && pass.equals("")){
                     Toast.makeText(LoginActivity.this, "Mail and Password required!", Toast.LENGTH_SHORT).show();
                 }else if(name.equals("")){

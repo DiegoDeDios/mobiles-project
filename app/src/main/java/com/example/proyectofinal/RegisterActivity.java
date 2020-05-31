@@ -54,7 +54,7 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
 
         etNameRegister = findViewById(R.id.etNameRegister);
         etLastnameFather = findViewById(R.id.etLastnameFather);
-        etLastnameMother = findViewById(R.id.etLastnameMother);
+        //etLastnameMother = findViewById(R.id.etLastnameMother);
         etAgeRegister = findViewById(R.id.etAgeRegister);
         etEmailRegister = findViewById(R.id.etEmailRegister);
         etPhone = findViewById(R.id.etPhone);
@@ -68,7 +68,6 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
             public void onClick(View v) {
                 name = etNameRegister.getText().toString();
                 father = etLastnameFather.getText().toString();
-                mother = etLastnameMother.getText().toString();
                 age = etAgeRegister.getText().toString();
                 phone = etPhone.getText().toString();
                 email = etEmailRegister.getText().toString();
@@ -120,7 +119,7 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        ((TextView)spinner.getChildAt(0)).setTextColor(Color.WHITE);
+        ((TextView)spinner.getChildAt(0)).setTextColor(Color.BLACK);
         school = parent.getItemAtPosition(position).toString();
     }
 

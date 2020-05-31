@@ -3,14 +3,20 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="140dp"
-    android:background="@color/blue">
+    android:background="@drawable/tech">
     
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Navigation Header"
         android:textSize="20dp"
-        android:textColor="@color/white"
+        android:textColor="@color/blackLogin"
         android:padding="10dp"/>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="#ffffff"
+        android:layout_alignParentBottom="true"/>
 
 </RelativeLayout>

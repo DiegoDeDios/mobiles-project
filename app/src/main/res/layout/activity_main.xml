@@ -1,120 +1,188 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.drawerlayout.widget.DrawerLayout
-    android:id="@+id/drawerLayout"
+    android:id="@+id/drawer"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/mbg"
     tools:context=".MainActivity"
-    android:background="@color/purple"
-    android:gravity="center"
-    android:orientation="vertical"
-    >
+    android:orientation="vertical">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <include
-            layout="@layout/navigationbar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
 
         <LinearLayout
-            android:id="@+id/button_frame"
             android:layout_width="match_parent"
-            android:layout_height="592dp"
-            android:background="@drawable/bg_menu"
+            android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="54dp"
-                android:orientation="horizontal"></LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/button1"
-                android:layout_width="match_parent"
-                android:layout_height="179dp"
-                android:background="@drawable/bg_menu_btn1"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:id="@+id/imageView3"
-                    android:layout_width="match_parent"
-                    android:layout_height="98dp"
-                    android:layout_weight="1"
-                    app:srcCompat="@android:drawable/ic_menu_edit" />
+                android:layout_height="wrap_content"
+                android:layout_marginTop="13dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="22dp">
 
                 <TextView
-                    android:id="@+id/textView"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="Actividades" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/button2"
-                android:layout_width="match_parent"
-                android:layout_height="179dp"
-                android:background="@drawable/bg_menu_btn2"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:id="@+id/imageView4"
-                    android:layout_width="127dp"
-                    android:layout_height="142dp"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    app:srcCompat="@drawable/grades" />
-
-                <TextView
-                    android:id="@+id/textView2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="Calificaciones" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/button3"
-                android:layout_width="match_parent"
-                android:layout_height="179dp"
-                android:background="@drawable/bg_menu_btn3"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:id="@+id/imageView5"
+                    android:id="@+id/textArea"
                     android:layout_width="wrap_content"
-                    android:layout_height="118dp"
-                    android:layout_weight="1"
-                    app:srcCompat="@drawable/classroom" />
-
-                <TextView
-                    android:id="@+id/textView3"
-                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="Salon de clases" />
-            </LinearLayout>
-        </LinearLayout>
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="189dp"
+                    android:layout_marginTop="15dp"
+                    android:text="Bienvenido, Alumno"
+                    android:textColor="@color/blackLogin"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/menuImage"
+                    android:layout_alignParentLeft="true"
+                    android:src="@drawable/ic_options"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"/>
+
+            </RelativeLayout>
+
+            <GridLayout
+                android:id="@+id/glContainer"
+                android:columnCount="1"
+                android:rowCount="3"
+                android:alignmentMode="alignMargins"
+                android:columnOrderPreserved="false"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/btnActivities"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="1"
+                    app:cardElevation="6dp"
+                    app:cardCornerRadius="12dp"
+                    android:layout_marginRight="12dp"
+                    android:layout_marginLeft="12dp"
+                    app:cardBackgroundColor="#99FFFFFF"
+                    >
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:padding="10dp"
+                        android:gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        >
+
+                        <ImageView
+                            android:src="@drawable/ic_assigment"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp" />
+
+                        <TextView
+                            android:layout_marginTop="12dp"
+                            android:textColor="#000"
+                            android:textSize="18sp"
+                            android:text="Actividades"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/btnGrades"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="1"
+                    app:cardElevation="6dp"
+                    app:cardCornerRadius="12dp"
+                    android:layout_marginRight="12dp"
+                    android:layout_marginLeft="12dp"
+                    app:cardBackgroundColor="#99FFFFFF"
+                    >
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:padding="10dp"
+                        android:gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#00FFFFFF">
+
+                        <ImageView
+                            android:src="@drawable/ic_grade"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"/>
+
+                        <TextView
+                            android:layout_marginTop="12dp"
+                            android:textColor="#000"
+                            android:textSize="18sp"
+                            android:text="Calificaciones"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/btnClassmates"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="1"
+                    app:cardElevation="6dp"
+                    app:cardCornerRadius="12dp"
+                    android:layout_marginRight="12dp"
+                    android:layout_marginLeft="12dp"
+                    app:cardBackgroundColor="#99FFFFFF"
+                    >
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:padding="10dp"
+                        android:gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:src="@drawable/ic_classmate"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"/>
+
+                        <TextView
+                            android:layout_marginTop="12dp"
+                            android:textColor="#000"
+                            android:textSize="18sp"
+                            android:text="Salon de clases"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </GridLayout>
+
         </LinearLayout>
 
-
+    </ScrollView>
 
     <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navigationView"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
+        app:headerLayout="@layout/navigationheader"
         app:menu="@menu/navigationmenu"
         android:layout_gravity="start"
-        app:headerLayout="@layout/navigationheader"
         >
 
     </com.google.android.material.navigation.NavigationView>
